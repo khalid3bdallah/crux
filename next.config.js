@@ -1,10 +1,14 @@
 // @ts-check
 
-/**
- * @type {import('next').NextConfig}
- **/
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true
-}
+  output: 'export',  // Enables static export
+  trailingSlash: true,
+  images: {
+    unoptimized: true,  // Required for static export if using Next.js Image
+  },
+};
 
-export default nextConfig
+module.exports = nextConfig;
+
+
